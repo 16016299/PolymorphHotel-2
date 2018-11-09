@@ -1,8 +1,8 @@
-package PolyHotel;
+package Abstraction2;
 
 import java.util.Scanner;
 
-public class Room {
+public class Room extends ClassWithAKeyboard {
 
     private int roomNos;
     private Customer occupier;
@@ -38,21 +38,17 @@ public class Room {
                 newperson = new GoldCustomer();
                 System.out.println("this is your second reminder that you are a gold customer");
             }
-            else {
+            else{
                 newperson = new OrdinaryCustomer();
                 System.out.println("this is your second reminder that you are a standard customer");
             }
-            /*newperson.getName();
-            newperson.getEmail();
-            if(gold == true){
-                newperson.getAddress();
-            }*/
             newperson.calcCost(cost);
             status = false;
             occupier = newperson;
         }
-        else
+        else{
             System.out.println("Sorry room booked");
+        }
     }
 
     public boolean getMembership(){
@@ -61,12 +57,11 @@ public class Room {
         input = kboard.next();
         if(input.equals("1")){
             gold = false;
-            System.out.println("this is your first reminder that you are a standard customer");
         }
         else if(input.equals("2")){
             gold = true;
-            System.out.println("this is your first reminder that you are a gold customer");
         }
+        closeKeyboard(kboard);
         return gold;
     }
 

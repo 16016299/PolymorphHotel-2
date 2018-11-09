@@ -1,4 +1,4 @@
-package PolyHotel;
+package Abstraction2;
 
 import java.util.Scanner;
 
@@ -21,6 +21,7 @@ public class GoldCustomer extends Customer{
         Scanner kboard = new Scanner(System.in);
         System.out.println("Please enter your name");
         customerName = kboard.nextLine();
+        closeKeyboard(kboard);
         return customerName;
     }
 
@@ -28,6 +29,7 @@ public class GoldCustomer extends Customer{
         Scanner kboard = new Scanner(System.in);
         System.out.println("Please enter your contact details");
         customerEmail = kboard.nextLine();
+        closeKeyboard(kboard);
         return customerEmail;
     }
 
@@ -35,6 +37,7 @@ public class GoldCustomer extends Customer{
         Scanner kboard = new Scanner(System.in);
         System.out.println("Please enter your address");
         customerAddress = kboard.nextLine();
+        closeKeyboard(kboard);
         return customerAddress;
     }
 
@@ -43,4 +46,3 @@ public class GoldCustomer extends Customer{
         System.out.println("Your total cost is "+cost);
     }
 }
-
